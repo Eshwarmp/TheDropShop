@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - The Drop Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1 class="logo">The Drop Shop</h1>
+
+        <!-- <div class="header-cta">
+            <a href="signup.html" class="cta-button">SIGN IN</a>
+        </div> -->
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="signup.html">Sign In</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="contact">
+            <h2>Join The Drop Shop Community</h2>
+            <p>Be the first to know about exclusive releases and early access sales.</p>
+
+            <form id="signupForm" action="https://usebasin.com/f/c3eb82112118" method="POST">
+
+                <label for="name">Name<sup class="required">*</sup>:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone">
+
+                <label for="email">Email Address<sup class="required">*</sup>:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">Choose a Password<sup class="required">*</sup>:</label>
+                <div class="password-container">
+                    <input type="password" id="password" name="password" required>
+                    <span class="toggle-password" id="togglePassword">👁️</span>
+                </div>
+                <p id="password-error" class="error-message"></p>
+
+
+                <button type="submit" class="cta-button">Register Now</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p style="text-align: center;">&copy; 2025 The Drop Shop. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

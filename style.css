@@ -1,0 +1,441 @@
+/* ---------------------------------------------------- */
+/* 1. Basic Setup (New Light/Teal Color Scheme) */
+/* ---------------------------------------------------- */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    /* Light background */
+    color: #111;
+    /* Dark text */
+    min-height: 100vh;
+    /* Ensures the body uses the full viewport height */
+    display: flex;
+    /* Turns the body into a flex container */
+    flex-direction: column;
+}
+
+main {
+    /* KEY FIX: Tells the main content area to take up all available space, 
+       pushing the footer to the bottom */
+    flex-grow: 1; 
+}
+
+a {
+    color: #111;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* ---------------------------------------------------- */
+/* 2. Header and Navigation Styling */
+/* ---------------------------------------------------- */
+header {
+    background-color: #ffffff;
+    padding: 15px 40px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 5px;
+    /* Sets the bar height */
+    width: 0%;
+    /* Starts hidden (0% width) */
+    background-color: #95c4d1;
+    /* Your vibrant teal accent color */
+    z-index: 1000;
+    /* Ensures it stays on top of other elements */
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #00cc99;
+    /* Vibrant Teal Accent */
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+}
+
+nav a:hover {
+    color: #00cc99;
+}
+
+/* ---------------------------------------------------- */
+/* 3. Hero Section and CTA (Call to Action) */
+/* ---------------------------------------------------- */
+#hero {
+    text-align: center;
+    padding: 120px 20px;
+    background-color: #e0e0e0;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #00cc99;
+    color: #ffffff;
+    padding: 12px 25px;
+    margin-top: 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #00a37a;
+}
+
+/* ---------------------------------------------------- */
+/* 4. Complete Product Grid Styling */
+/* ---------------------------------------------------- */
+#products {
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.product-grid {
+    display: grid;
+    /* Defines four equal columns with 20px of space between them */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+/* Styling for individual cards (makes them look attractive) */
+.product-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    /* Subtle lift effect */
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    /* Moves card up slightly on hover */
+}
+
+/* Update the .product-card img block in style.css */
+.product-card img {
+    width: 100%;
+    /* New code below: Fixes the height and makes the image crop to fill the space */
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+.product-card h3,
+.product-card p {
+    padding: 0 15px;
+    text-align: left;
+}
+
+.product-card p {
+    font-weight: bold;
+    color: #00cc99;
+    padding-bottom: 15px;
+}
+
+/* ---------------------------------------------------- */
+/* 5. Mobile Responsiveness */
+/* ---------------------------------------------------- */
+@media (max-width: 900px) {
+
+    /* Tablet/Medium Screens: Switch to a 2-column grid */
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+
+    /* Mobile Screens: Switch to a single-column layout */
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px 20px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #hero {
+        padding: 60px 20px;
+    }
+}
+
+/* Styling for the new Contact Section */
+#contact {
+    padding: 33px 20%;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+#contact h2 {
+    margin-bottom: 30px;
+    color: #111;
+}
+
+#contact form {
+    display: grid;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+    gap: 15px;
+}
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact input[type="password"],
+#contact input[type="tel"],
+#contact textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#contact button {
+    margin-top: 10px;
+}
+
+/* Styling for the Category Grid */
+#category-list {
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.category-grid {
+    display: grid;
+    /* 3 equal columns for the 3 main categories */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+.category-tile {
+    display: block;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s;
+    color: #111;
+}
+
+.category-tile:hover {
+    transform: translateY(-5px);
+    text-decoration: none;
+}
+
+.category-tile img {
+    width: 100%;
+    height: 300px;
+    /* Fixed height for uniformity */
+    object-fit: cover;
+    display: block;
+}
+
+.category-tile h3 {
+    padding: 15px 10px;
+    margin: 0;
+    font-size: 1.2em;
+}
+
+/* Responsive adjustment for the category grid */
+@media (max-width: 768px) {
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columns on tablets */
+    }
+}
+
+@media (max-width: 500px) {
+    .category-grid {
+        grid-template-columns: 1fr;
+        /* 1 column on mobile phones */
+    }
+}
+
+/* Styling for the Sub-Category List on men.html/women.html */
+#category-listing {
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.sub-category-list {
+    display: flex;
+    /* Arranges the links side-by-side */
+    flex-wrap: wrap;
+    /* Allows links to move to the next line on small screens */
+    gap: 20px;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+.sub-category-link {
+    display: block;
+    background-color: #ffffff;
+    padding: 20px;
+    width: 200px;
+    /* Fixed width for a uniform button-like appearance */
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s, transform 0.3s;
+    color: #111;
+    text-align: center;
+}
+
+.sub-category-link:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+.sub-category-link h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.1em;
+}
+
+.sub-category-link p {
+    color: #00cc99;
+    /* Uses the vibrant accent color for the item count */
+    font-size: 0.9em;
+    margin: 0;
+}
+
+/* Styling for the new Trend Spotlight section */
+#trends {
+    padding: 60px 40px;
+    text-align: center;
+    background-color: #f0f0f0;
+    /* Slight off-white contrast */
+}
+
+#trends h2 {
+    color: #111;
+    margin-bottom: 40px;
+}
+
+.trend-grid {
+    display: flex;
+    /* Arranges the cards side-by-side */
+    gap: 30px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.trend-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    flex: 1;
+    /* Makes all cards take equal space */
+    text-align: left;
+}
+
+/* Responsiveness for the trend cards */
+@media (max-width: 900px) {
+    .trend-grid {
+        flex-direction: column;
+        /* Stack vertically on tablets/mobile */
+    }
+}
+
+/* Styling for the required red asterisk */
+.required {
+    color: red;
+    font-size: 1.2em;
+    margin-left: 2px;
+}
+
+/* Styling for the Password Visibility Toggle */
+.password-container {
+    position: relative;
+    /* Allows icon to be positioned inside */
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.password-container input {
+    padding-right: 40px;
+    /* Make space for the icon */
+}
+
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    user-select: none;
+    font-size: 1.2em;
+}
+
+/* Styling for the live validation error message */
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: -10px;
+    /* Pulls the message closer to the input */
+    margin-bottom: 5px;
+}
+/* Star Rating System Styling */
+.rating-stars {
+    display: inline-block;
+    direction: rtl; /* Puts stars in reverse order for selection logic */
+    font-size: 2em; /* Makes the stars large and visible */
+    unicode-bidi: bidi-override;
+    margin-bottom: 20px;
+}
+
+.rating-stars > input {
+    display: none; /* Hides the actual radio buttons */
+}
+
+.rating-stars > label {
+    color: #ccc; /* Default grey color for unselected stars */
+    cursor: pointer;
+    padding: 0 2px;
+}
+
+/* Selection Logic: Change color of the selected star and all stars to its right */
+.rating-stars > input:checked ~ label {
+    color: #ffc700; /* Gold color for selected stars */
+}
+
+/* Hover Logic: Change color of the hovered star and all stars to its right */
+.rating-stars > label:hover,
+.rating-stars > label:hover ~ label {
+    color: #ffc700;
+}

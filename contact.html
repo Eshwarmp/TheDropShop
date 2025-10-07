@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact The Drop Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1 class="logo">The Drop Shop</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="signup.html">Sign In</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="contact">
+            <h2>Get in Touch</h2>
+            <p>Have questions about a drop? Send us a message.</p>
+            <form action="https://usebasin.com/f/12966e2826a3" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="rating">Rating (1-5):</label>
+                <div class="rating-stars">
+                    <input type="radio" id="star5" name="rating" value="5" required /><label for="star5"
+                        title="5 stars">★</label>
+                    <input type="radio" id="star4" name="rating" value="4" /><label for="star4"
+                        title="4 stars">★</label>
+                    <input type="radio" id="star3" name="rating" value="3" /><label for="star3"
+                        title="3 stars">★</label>
+                    <input type="radio" id="star2" name="rating" value="2" /><label for="star2"
+                        title="2 stars">★</label>
+                    <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="1 star">★</label>
+                </div>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit" class="cta-button">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p style="text-align: center;">&copy; 2025 The Drop Shop. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
